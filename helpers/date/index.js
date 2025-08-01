@@ -1,1 +1,2 @@
 export { default as format } from "./format";
+export { default as isOnSameDay } from "./is-on-same-day";
