@@ -8,7 +8,8 @@
   ],
   "scripts": {
     "release": "standard-version",
-    "test": "npx vitest --ui --coverage"
+    "test": "npx vitest --ui --coverage",
+    "publish-package": "npm publish --access=public"
   },
   "standard-version": {},
   "author": {
