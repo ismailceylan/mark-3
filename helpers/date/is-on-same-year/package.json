@@ -1,0 +1,25 @@
+{
+  "name": "@mark-3/helpers-date-is-on-same-year",
+  "type": "module",
+  "version": "0.0.3",
+  "description": "Checks if two Date objects fall within the same year.",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "scripts": {
+    "build": "tsc",
+    "release": "standard-version",
+    "publish-package": "npm publish --access=public"
+  },
+  "standard-version": {
+    "tagPrefix": "@mark-3/helpers/date/is-on-same-year@"
+  },
+  "keywords": [
+    "date",
+    "helper",
+    "year",
+    "compare",
+    "utility"
+  ],
+  "author": "Ismail Ceylan",
+  "license": "MIT"
+}
