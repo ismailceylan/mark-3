@@ -7,7 +7,7 @@ describe("isSet", () =>
 	{
 		expect(isSet(new Set())).toBe(true);
 		const set = new Set();
-		set.set("key", "value");
+		set.add("key", "value");
 		expect(isSet(set)).toBe(true);
 	});
 
