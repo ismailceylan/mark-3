@@ -1,5 +1,3 @@
-import { getTypeName } from "../type";
-
 /**
  * Checks if the given value is a plain object.
  *
@@ -8,5 +6,12 @@ import { getTypeName } from "../type";
  */
 export default function isPlainObject( value )
 {
-	return getTypeName( value ) === "Object";
+	if( typeof value !== "object" || value === null )
+	{
+		return false;
+	}
+
+	const proto = Object.getPrototypeOf( value );
+	
+	return proto === Object.prototype || proto === null;
 }
