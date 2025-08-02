@@ -2,7 +2,7 @@
   "name": "mark-3",
   "description": "Modular collection of reusable JavaScript helpers, utilities, and Vue components. Built for maintainability, performance, and clarity.",
   "private": false,
-  "version": "0.0.2",
+  "version": "0.0.3",
   "workspaces": [
     "src/*/*"
   ],
