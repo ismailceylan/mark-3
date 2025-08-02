@@ -1,5 +1,5 @@
 import { describe, it, expect } from "vitest";
-import escapeRegex from "./escapeRegex";
+import escapeRegex from ".";
 
 describe( "escapeRegex", () =>
 {

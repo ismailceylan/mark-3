@@ -1,5 +1,5 @@
 import { describe, it, expect } from "vitest";
-import getTypeName from "./type";
+import getTypeName from ".";
 
 describe( "type", () =>
 {

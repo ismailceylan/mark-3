@@ -1,5 +1,5 @@
 import { describe, it, expect } from "vitest";
-import isEmpty from "../src/isEmpty";
+import isEmpty from ".";
 
 describe( "isEmpty", () =>
 {
