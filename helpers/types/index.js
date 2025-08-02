@@ -1,4 +1,5 @@
 export { default as isMap } from "./is-map";
+export { default as isSet } from "./is-set";
 export { default as isArray } from "./is-array";
 export { default as isEmpty } from "./is-empty";
 export { default as isString } from "./is-string";
