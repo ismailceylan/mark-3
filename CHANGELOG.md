@@ -2,6 +2,20 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.0.4](https://github.com/ismailceylan/mark-3/compare/v0.0.3...v0.0.4) (2025-08-02)
+
+
+### Features
+
+* **composables:** add new use-responsiveness composable ([3b6ebe4](https://github.com/ismailceylan/mark-3/commit/3b6ebe4f0c50668453071cf4146b3dc459a25f24))
+* **helpers:** add new types/is-map method ([fdcda02](https://github.com/ismailceylan/mark-3/commit/fdcda0239aab54951df1c708dee7e74989801c79))
+* **helpers:** add new types/is-set method ([618abbe](https://github.com/ismailceylan/mark-3/commit/618abbeb6f068774dfa4c6158302fd7ac5f7fccc))
+
+
+### Bug Fixes
+
+* **helpers:** ensures that the default argument value is used for chars on string/trim method ([645f41e](https://github.com/ismailceylan/mark-3/commit/645f41e883b8777a16e4773ed520411e9953a45b))
+
 ### [0.0.3](https://github.com/ismailceylan/mark-3/compare/v0.0.2...v0.0.3) (2025-08-02)
 
 
