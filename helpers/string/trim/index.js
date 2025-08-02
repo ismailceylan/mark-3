@@ -11,7 +11,7 @@ import { isEmpty, isArray, isString } from "../../types";
  */
 export default function trim( input, chars = " " )
 {
-	if( ! isString( input ) || isEmpty( chars ))
+	if( ! isString( input ) || ( chars !== " " && isEmpty( chars )))
 	{
 		return input;
 	}
