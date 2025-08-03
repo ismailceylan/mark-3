@@ -2,6 +2,21 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.0.5](https://github.com/ismailceylan/mark-3/compare/v0.0.4...v0.0.5) (2025-08-03)
+
+
+### Features
+
+* **component:** add new scroll-aware-content component ([5cb2645](https://github.com/ismailceylan/mark-3/commit/5cb2645a7f2ed778adc5f30a6e684b89b4ac360a))
+* **composables:** add new use-intersection-observer composable ([5d71054](https://github.com/ismailceylan/mark-3/commit/5d710544a3067f29c8b5c4ce1db66c1ab3549a06))
+* **composables:** add new use-scroll-event composable ([00e87cc](https://github.com/ismailceylan/mark-3/commit/00e87cc5bab981f53c4c61a7f3858ad4d0c45a9c))
+* **helpers:** add new array/pick-random method ([1679cfa](https://github.com/ismailceylan/mark-3/commit/1679cfa821219fe85aef19afc17ed1b831d08ffd))
+* **helpers:** add new number/clamp method ([3694de5](https://github.com/ismailceylan/mark-3/commit/3694de551c05ad8cab78e139f35225f92d7e50b1))
+* **helpers:** add new number/random method ([bf718b3](https://github.com/ismailceylan/mark-3/commit/bf718b3ffca5147fb7985bde8d5c22e2763b3bfc))
+* **helpers:** add new string/encode-subscript method ([3dce61a](https://github.com/ismailceylan/mark-3/commit/3dce61a8c9d927126ddb94118a33d0663bba5269))
+* **helpers:** add new time/debounce helper method ([e9c4232](https://github.com/ismailceylan/mark-3/commit/e9c423233f7b946715f8624432af40f96aba9e90))
+* **helpers:** add new types/is-numeric helper method ([ab84773](https://github.com/ismailceylan/mark-3/commit/ab847736ae695fce62e42155c3653a216f6e321b))
+
 ### [0.0.4](https://github.com/ismailceylan/mark-3/compare/v0.0.3...v0.0.4) (2025-08-02)
 
 
