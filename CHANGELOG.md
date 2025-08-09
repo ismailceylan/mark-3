@@ -2,6 +2,16 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.0.6](https://github.com/ismailceylan/mark-3/compare/v0.0.5...v0.0.6) (2025-08-09)
+
+
+### Features
+
+* **composables:** add new use-outside-clicks composable ([6657b90](https://github.com/ismailceylan/mark-3/commit/6657b90c8330888d7f5d23b20cd85519bd44530b))
+* **composables:** add new use-pointer-swipe composable ([c048b5c](https://github.com/ismailceylan/mark-3/commit/c048b5ce2aafe1f8d8a79aa7b1b37398a8e195e2))
+* **composables:** add new use-swipeable-drawer composable ([f9e7c7a](https://github.com/ismailceylan/mark-3/commit/f9e7c7a0f757b04d63fef2ce078ed89d5e044dd8))
+* **helpers:** add new string/encode-superscript method ([655fb59](https://github.com/ismailceylan/mark-3/commit/655fb59692486202e04da2f742c5ce0d432e3b71))
+
 ### [0.0.5](https://github.com/ismailceylan/mark-3/compare/v0.0.4...v0.0.5) (2025-08-03)
 
 
