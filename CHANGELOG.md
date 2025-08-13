@@ -2,6 +2,17 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.0.7](https://github.com/ismailceylan/mark-3/compare/v0.0.6...v0.0.7) (2025-08-13)
+
+
+### Features
+
+* **components:** add new virtual-scroll component ([c73a31d](https://github.com/ismailceylan/mark-3/commit/c73a31d6dc2ec37d8e70a15160bda495425712ca))
+* **composables:** add new use-css-metrics composable ([8500859](https://github.com/ismailceylan/mark-3/commit/85008595788348956cd2f40cc0fff65d038672b0))
+* **composables:** add new use-resize-observer composable ([6d110b5](https://github.com/ismailceylan/mark-3/commit/6d110b5c17facd4918a8a02a49d2f7644ada8f96))
+* **composables:** add new use-scroll-position composable ([f847cb0](https://github.com/ismailceylan/mark-3/commit/f847cb0a9f19f09f82ab55d447227a7aa21516d5))
+* **helpers:** add new time/throttle method ([60b8472](https://github.com/ismailceylan/mark-3/commit/60b8472fdb56119888c90446fe237b1fc9573f2b))
+
 ### [0.0.6](https://github.com/ismailceylan/mark-3/compare/v0.0.5...v0.0.6) (2025-08-09)
 
 
