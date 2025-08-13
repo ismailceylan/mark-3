@@ -1,20 +1,4 @@
 /**
- * @typedef ScrollMetrics
- * @type {object}
- * @property {number} maxScrolled the furthest point reached by scrolling
- * @property {"vertical"|"horizontal"} direction scroll direction
- * @property {number} seen seen pixels
- * @property {number} unseen unseen pixels
- * @property {number} visible the area covered by the scrollable content
- * on the screen
- * @property {number} scrolled currently scrolled pixels
- * @property {number} scrollable total scrollable pixels
- * @property {"up"|"down"} vertical whether the vertical direction is
- * towards the up or the down
- * @property {"left"|"right"} horizontal whether the horizontal direction
- * is towards the left or the right
- */
-/**
  * This function takes a scroll event and calculates the scrolling
  * direction, along with metrics for visible, scrollable, and
  * unseen areas.
@@ -23,11 +7,7 @@
  * along with relevant metrics.
  * 
  * @param {Event} evt scroll event object
- * @param {object} metrics
- * @property {number} metrics.latestScrollTop latest vertically scrolled pixel
- * @property {number} metrics.latestScrollLeft latest horizontally scrolled pixel
- * @property {number} metrics.biggestScrollLeft biggest horizontally scrolled pixel
- * @property {number} metrics.biggestScrollTop biggest vertically scrolled pixel
+ * @param {LatestScrollMetrics} metrics latest scroll metrics
  * @return {ScrollMetrics}
  */
 export default function useScrollEvent(
@@ -95,3 +75,27 @@ export default function useScrollEvent(
 		horizontal
 	}
 }
+/**
+ * @typedef ScrollMetrics
+ * @type {object}
+ * @property {number} maxScrolled the furthest point reached by scrolling
+ * @property {"vertical"|"horizontal"} direction scroll direction
+ * @property {number} seen seen pixels
+ * @property {number} unseen unseen pixels
+ * @property {number} visible the area covered by the scrollable content
+ * on the screen
+ * @property {number} scrolled currently scrolled pixels
+ * @property {number} scrollable total scrollable pixels
+ * @property {"up"|"down"} vertical whether the vertical direction is
+ * towards the up or the down
+ * @property {"left"|"right"} horizontal whether the horizontal direction
+ * is towards the left or the right
+ */
+/**
+ * @typedef LatestScrollMetrics
+ * @type {object}
+ * @property {number} [latestScrollTop=0] latest vertically scrolled pixel
+ * @property {number} [latestScrollLeft=0] latest horizontally scrolled pixel
+ * @property {number} [biggestScrollLeft=0] biggest horizontally scrolled pixel
+ * @property {number} [biggestScrollTop=0] biggest vertically scrolled pixel
+ */

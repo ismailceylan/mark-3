@@ -1,10 +1,6 @@
 import { isRef, unref, onMounted, onUnmounted, getCurrentInstance } from "vue";
 
 /**
- * @template T
- * @typedef {import("vue").Ref<T>} Ref
- */
-/**
  * A composition function that adds a DOM event listener to the given target with the
  * given event name and callback. The options object is optional. If the composition
  * function is called from within a component, then the event listener is added when
@@ -15,7 +11,7 @@ import { isRef, unref, onMounted, onUnmounted, getCurrentInstance } from "vue";
  * @param {EventTarget|Ref<EventTarget>} maybeRefTarget - The target element to add the event listener to.
  * @param {string} eventName - The name of the event to add a listener for.
  * @param {function} callBack - The callback function to call when the event happens.
- * @param {object} [options] - The options object to pass to addEventListener.
+ * @param {EventListenerOptions} [options] - The options object to pass to addEventListener.
  * @returns {function} - A function that can be called to remove the event listener.
  */
 export default function useEventListener( maybeRefTarget, eventName, callBack, options )
@@ -52,3 +48,15 @@ export default function useEventListener( maybeRefTarget, eventName, callBack, o
 
 	return stop;
 }
+
+/**
+ * @template T
+ * @typedef {import("vue").Ref<T>} Ref
+ */
+/**
+ * @typedef EventListenerOptions
+ * @type {object}
+ * @property {boolean} [capture=false] true for capturing, false for bubbling
+ * @property {boolean} [once=false] true for run the event once or false for keep it persistent
+ * @property {boolean} [passive=false] true for passive, false for not passive
+ */
