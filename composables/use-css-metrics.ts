@@ -23,25 +23,17 @@ export default function useCssMetrics<P extends readonly string[]>(
 	let observer = null;
 	const { observe, unobserve, disconnect } = useResizeObserver( updateMetrics, { throttle });
 
-	function updateMetrics()
+	metrics.value = Object.fromEntries( properties.map( prop =>
+		[ prop, 0 ]
+	));
+
+	if( classes === undefined || ( Array.isArray( classes ) && classes.length === 0 ))
 	{
-		if( ! ghostEl )
-		{
-			return;
-		}
-
-		const computed = getComputedStyle( ghostEl );
-		const computed2 = getComputedStyle( widthEl );
-
-		properties.forEach( prop =>
-		{
-			const source = [ "width", "height" ].includes( prop )
-				? computed2
-				: computed;
-			
-			metrics.value[ prop ] = parseFloat( source.getPropertyValue( prop )) || 0;
-		});
+		return metrics;
 	}
+
+	onMounted( init );
+	onUnmounted( destroy );
 
 	function init()
 	{
@@ -83,6 +75,26 @@ export default function useCssMetrics<P extends readonly string[]>(
 		updateMetrics();
 	}
 
+	function updateMetrics()
+	{
+		if( ! ghostEl )
+		{
+			return;
+		}
+
+		const computed = getComputedStyle( ghostEl );
+		const computed2 = getComputedStyle( widthEl );
+
+		properties.forEach( prop =>
+		{
+			const source = [ "width", "height" ].includes( prop )
+				? computed2
+				: computed;
+			
+			metrics.value[ prop ] = parseFloat( source.getPropertyValue( prop )) || 0;
+		});
+	}
+
 	function destroy()
 	{
 		if( observer && ghostEl )
@@ -98,9 +110,6 @@ export default function useCssMetrics<P extends readonly string[]>(
 
 		ghostEl = null;
 	}
-
-	onMounted( init );
-	onUnmounted( destroy );
 
 	return metrics;
 }
