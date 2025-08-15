@@ -58,6 +58,8 @@ const heights = ref<number[]>([]);
 const identifiedItems = reactive<{ item: any, index: number }[]>([]);
 const container = ref<HTMLElement>( null );
 const metrics = useCssMetrics( props.itemGapClasses, [ "gap" ] as const, { throttle: 100 });
+const isHeightsDirty = ref( false );
+const dirtyItems = {}
 
 const scrollableElement = computed(() =>
 	props.pageMode
@@ -164,7 +166,12 @@ const { observe } = useResizeObserver(( entries ) =>
 		const newHeight = entry.contentRect.height;
 		const oldHeight = heights.value[ index ] || 0;
 
-		heights.value[ index ] = max( newHeight + metrics.value.gap, oldHeight );
+		heights.value[ index ] = index in dirtyItems
+			// replace old height
+			? newHeight + metrics.value.gap
+			: max( newHeight + metrics.value.gap, oldHeight );
+
+		delete dirtyItems[ index ];
 	});
 });
 
@@ -195,9 +202,34 @@ watch( props.items, items =>
 	);
 });
 
-useEventListener( window, "resize", debounce(() =>
+watch( isHeightsDirty, () =>
+{
+	if( isHeightsDirty.value === false )
+	{
+		return;
+	}
+
+	visibleItems.value.forEach(({ index }) =>
+	{
+		const itemEl = container.value.querySelector( "[data-index='" + index + "']" );
+		
+		if( itemEl === null )
+		{
+			return dirtyItems[ index ] = true;
+		}
+
+		heights.value[ index ] = itemEl.getBoundingClientRect().height + metrics.value.gap;
+	});
+
+	isHeightsDirty.value = false;
+});
+
+useEventListener( window, "resize", debounce( resetHeights, 100 ), { passive: true });
+
+function resetHeights()
 {
 	heights.value = identifiedItems.map(() => props.minHeight );
-}, 250 ), { passive: true });
+	isHeightsDirty.value = true;
+}
 
 </script>
