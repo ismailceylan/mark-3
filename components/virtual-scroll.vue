@@ -1,7 +1,7 @@
 <template>
 	<!-- Mark-3/VirtualScroll -->
 	<div ref="container">
-		<div :style="{ minHeight: totalHeight + 'px' }">
+		<div :style="{ transform: 'translateZ(0)', position: 'relative', minHeight: totalHeight + 'px' }">
 			<slot
 				v-for="{ item, index } of visibleItems"
 				:key="item.id"
