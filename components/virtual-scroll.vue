@@ -43,18 +43,8 @@ const props = defineProps(
 		default: 20
 	},
 
-	itemGap: {
-		type: Number,
-		default: 0
-	},
-
 	itemGapClasses: {
 		type: String
-	},
-
-	idKey: {
-		type: String,
-		default: "id"
 	},
 
 	threshold: {
