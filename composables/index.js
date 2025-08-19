@@ -7,5 +7,5 @@ export { default as useEventListener } from "./use-event-listener.js";
 export { default as useResponsiveness } from "./use-responsiveness.js";
 export { default as useResizeObserver } from "./use-resize-observer.js";
 export { default as useScrollPosition } from "./use-scroll-position.js";
-export { default as useSwipeableDrawer } from "./use-swipeable-drawer.js";
+export { default as useSwipeableDrawer } from "./use-swipeable-drawer.ts";
 export { default as useIntersectionObserver } from "./use-intersection-observer.js";
