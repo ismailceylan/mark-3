@@ -1,4 +1,5 @@
 import { useEventListener } from ".";
+import { isArray } from "../helpers/types";
 
 /**
  * Watches for clicks outside of the given element and calls the
@@ -16,7 +17,7 @@ import { useEventListener } from ".";
  *   listener when the extraordinary circumstances arise.
  * 
  * @typedef {import('vue').Ref<Element>} ElementRef
- * @param {ElementRef[]} elRefs - The elements to watch for clicks outside of.
+ * @param {ElementRef|ElementRef[]} elRefs - The elements to watch for clicks outside of.
  * @param {function} callback - The callback to call when a click is outside of the element.
  * @param {object} options - The options object.
  * @property {string} options.on - The event to listen for.
@@ -40,6 +41,11 @@ import { useEventListener } from ".";
  */
 export default function useOutsideClick( elRefs, callback, { on = "click" } = {})
 {
+	if( ! isArray( elRefs ))
+	{
+		elRefs = [ elRefs ];
+	}
+
 	return useEventListener( document, on, e =>
 	{
 		if( elRefs.length === 0 )
