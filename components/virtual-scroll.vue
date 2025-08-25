@@ -99,7 +99,7 @@ const totalHeight = computed(() =>
 		return 0;
 	}
 
-	return h;
+	return h + 1;
 });
 
 const startIndex = computed(() =>
