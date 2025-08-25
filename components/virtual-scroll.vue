@@ -4,7 +4,7 @@
 		<div :style="{ transform: 'translateZ(0)', position: 'relative', minHeight: totalHeight + 'px' }">
 			<slot
 				v-for="{ item, index } of visibleItems"
-				:key="item.id"
+				:key="index"
 				:item
 				:index
 				:observe
