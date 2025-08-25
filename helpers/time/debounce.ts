@@ -13,17 +13,21 @@
  * 
  * window.addEventListener( "scroll", debounced );
  * 
- * @param {function} callback The function to debounce.
- * @param {number} delay The delay in milliseconds.
- * @returns {function}
+ * @param callback The function to debounce.
+ * @param delay The delay in milliseconds.
+ * @returns A debounced version of the input function.
  */
-export default function debounce( callback, delay = 200 )
+export default function debounce<TArgs extends any[]>
+(
+	callback: ( ...args: TArgs ) => void,
+	delay = 200
+): ( ...args: TArgs ) => void
 {
-	let timer;
+	let timer: ReturnType<typeof setTimeout>;
 
-	return function debounceWrapper( ...args )
+	return function debounceWrapper( this: unknown, ...args: TArgs )
 	{
 		clearTimeout( timer );
-		timer = setTimeout( callback.bind( this, ...args ), delay );
+		timer = setTimeout(() => callback.apply(this, args), delay );
 	}
 }
