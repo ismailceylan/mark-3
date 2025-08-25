@@ -183,7 +183,7 @@ watch( endIndex, () =>
 	}
 });
 
-watch( props.items, items =>
+watch( () => props.items, items =>
 {
 	const normalizedItems = items.map(( item, i ) =>
 	({
