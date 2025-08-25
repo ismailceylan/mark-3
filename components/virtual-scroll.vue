@@ -193,10 +193,7 @@ watch( () => props.items, items =>
 
 	identifiedItems.length = 0;
 	identifiedItems.push( ...normalizedItems );
-});
 
-watch( props.items, items =>
-{
 	heights.value = items.map(( _, i ) =>
 		heights.value[ i ] ?? props.minHeight
 	);
