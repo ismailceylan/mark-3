@@ -184,7 +184,7 @@ watch( endIndex, () =>
 	}
 });
 
-watch( () => props.items, items =>
+watch(() => props.items, items =>
 {
 	const normalizedItems = items.map(( item, i ) =>
 	({
@@ -198,7 +198,7 @@ watch( () => props.items, items =>
 	heights.value = items.map(( _, i ) =>
 		heights.value[ i ] ?? props.minHeight
 	);
-}, { immediate: true });
+}, { immediate: true, deep: true });
 
 watch( isHeightsDirty, () =>
 {
