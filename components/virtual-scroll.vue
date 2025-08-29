@@ -68,7 +68,7 @@ const scrollableElement = computed(() =>
 		: container.value
 );
 
-const scrollPos = useScrollPosition( scrollableElement, { throttle: 50 });
+const scrollPos = useScrollPosition( scrollableElement, { throttle: 150 });
 
 const offsets = computed<number[]>(() =>
 {
