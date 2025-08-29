@@ -17,12 +17,14 @@
 </template>
 
 <script lang="ts" setup>
-import { ref, watch, computed, reactive } from "vue";
+import { ref, watch, computed, reactive, nextTick } from "vue";
 import { useCssMetrics, useEventListener, useResizeObserver, useScrollPosition } from "../composables";
 import { debounce } from "../helpers/time";
 import { clamp } from "../helpers/number";
 
 const emit = defineEmits([ "threshold-reached" ]);
+
+const scrollTop = defineModel( "scrollTop", { default: 0 });
 
 const props = defineProps(
 {
@@ -175,6 +177,23 @@ const { observe } = useResizeObserver(( entries ) =>
 		delete dirtyItems[ index ];
 	});
 });
+
+watch( scrollPos.y, () => scrollTop.value = scrollPos.y.value );
+
+watch( scrollTop, async () =>
+{
+	await nextTick();
+	
+	if( scrollableElement.value instanceof HTMLElement )
+	{
+		scrollableElement.value.scrollTop = scrollTop.value;
+	}
+	else if( scrollableElement.value === window )
+	{
+		window.scrollTo( 0, scrollTop.value );
+	}
+}, { immediate: true });
+
 
 watch( endIndex, () =>
 {
