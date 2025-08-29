@@ -27,6 +27,7 @@ const emit = defineEmits([ "threshold-reached" ]);
 const props = defineProps(
 {
 	pageMode: Boolean,
+	dontWatchResizing: Boolean,
 
 	items: {
 		type: Array,
@@ -221,7 +222,10 @@ watch( isHeightsDirty, () =>
 	isHeightsDirty.value = false;
 });
 
-useEventListener( window, "resize", debounce( resetHeights, 100 ), { passive: true });
+if( props.dontWatchResizing === false )
+{
+	useEventListener( window, "resize", debounce( resetHeights, 100 ), { passive: true });
+}
 
 function resetHeights()
 {
