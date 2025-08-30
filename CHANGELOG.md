@@ -2,6 +2,27 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.0.9](https://github.com/ismailceylan/mark-3/compare/v0.0.8...v0.0.9) (2025-08-30)
+
+
+### Features
+
+* **components:** add an option to ignore window size changes in virtual-scroll component ([2e27806](https://github.com/ismailceylan/mark-3/commit/2e2780680718824df973d050b109cf81ef657dc5))
+* **components:** add support for two-way top scroll determination using the v-model method for virtual-scroll component ([123c89e](https://github.com/ismailceylan/mark-3/commit/123c89e6cc216305ac7d66e2c8d961d50cc7aaad))
+* **helpers:** add new chunk method for arrays ([9150623](https://github.com/ismailceylan/mark-3/commit/9150623b9194830b5699c0863e8313fcde21c3d3))
+* **helpers:** add new number/compact helper ([6d40850](https://github.com/ismailceylan/mark-3/commit/6d40850dcb174d32232e70e9139fe71f43a05d96))
+* **helpers:** add new number/reduce helper ([1881c99](https://github.com/ismailceylan/mark-3/commit/1881c992547a42eb6b23aa60298d5abfc2ef0c56))
+
+
+### Bug Fixes
+
+* **components:** add a watch getter to watch some ref elements in virtual-scroll component ([a74b0b7](https://github.com/ismailceylan/mark-3/commit/a74b0b7061a3fef9da8acc1177dda03f54edd9ae))
+* **components:** add the immediate flag to process the already full item store immediately in virtual-scroll component ([a45a4da](https://github.com/ismailceylan/mark-3/commit/a45a4da63c3921714b0df8f86e33601956ad9a69))
+* **components:** use a more secure value to ensure that the key value of the virtual scroll element is unique ([1db4081](https://github.com/ismailceylan/mark-3/commit/1db40812aadbbc186bcae6a7169a298060aa9ced))
+* **components:** use the getter watch pattern to watch elements properly when they are sent as refs in virtual-scroll component ([6556ae8](https://github.com/ismailceylan/mark-3/commit/6556ae8abec1c2b5715fd914503d539bb1dd8e8a))
+* **composables:** fix virtual-scroll artifact problems and add relative position to wrapper ([a7566c3](https://github.com/ismailceylan/mark-3/commit/a7566c352f0f83f8ab0df910d3e7d6517d0e5c3a))
+* **composables:** virtual-scroll recalculate properly item heights when the screen size changed ([0749124](https://github.com/ismailceylan/mark-3/commit/07491247c28461c9cc65b49c98d992dfab07aeea))
+
 ### [0.0.8](https://github.com/ismailceylan/mark-3/compare/v0.0.7...v0.0.8) (2025-08-13)
 
 ### [0.0.7](https://github.com/ismailceylan/mark-3/compare/v0.0.6...v0.0.7) (2025-08-13)
