@@ -1,4 +1,4 @@
-import { ref, watch, reactive, computed, onMounted, onUnmounted } from "vue";
+import { ref, isRef, watch, reactive, computed, onMounted, onUnmounted } from "vue";
 import { useEventListener } from ".";
 
 /**
@@ -61,33 +61,6 @@ export default function usePointerSwipe( maybeRefEl, { threshold = 50, disableTe
 		return abs( distance / timePassed.value );
 	});
 
-	watch( maybeRefEl, () =>
-	{
-		useEventListener( maybeRefEl, "pointerdown", e =>
-		{
-			isSwiping.value = true;
-			posStart.x = e.clientX;
-			posStart.y = e.clientY;
-			timeStart.value = performance.now();
-	
-			const stopListeningMove = useEventListener( maybeRefEl, "pointermove", e =>
-			{
-				posEnd.x = e.clientX;
-				posEnd.y = e.clientY;
-				distanceX.value = posEnd.x - posStart.x;
-				distanceY.value = posEnd.y - posStart.y;
-			});
-	
-			useEventListener( maybeRefEl, "pointerup", () =>
-			{
-				isSwiping.value = false;
-				timeEnd.value = performance.now();
-	
-				stopListeningMove();
-			},{ once: true });
-		});
-	}, { immediate: true });
-
 	onMounted(() =>
 	{
 		if( disableTextSelect )
@@ -103,6 +76,66 @@ export default function usePointerSwipe( maybeRefEl, { threshold = 50, disableTe
 			document.documentElement.style.removeProperty( "user-select" );
 		}
 	});
+
+	if( isRef( maybeRefEl ))
+	{
+		watch( maybeRefEl, listen, { immediate: true });
+	}
+	else
+	{
+		listen();
+	}
+
+	function listen()
+	{
+		useEventListener(
+			maybeRefEl,
+			"pointerdown",
+			onDown
+		);
+	}
+
+	function onDown( e )
+	{
+		onStart( e );
+
+		const stopMoving = useEventListener(
+			maybeRefEl,
+			"pointermove",
+			onMove
+		);
+
+		useEventListener(
+			maybeRefEl,
+			"pointerup",
+			() => onUp( stopMoving ),
+			{ once: true }
+		);
+	}
+
+	function onStart( e )
+	{
+		isSwiping.value = true;
+		posStart.x = e.clientX;
+		posStart.y = e.clientY;
+		timeStart.value = performance.now();
+	}
+	
+	function onMove( e )
+	{
+		posEnd.x = e.clientX;
+		posEnd.y = e.clientY;
+		distanceX.value = posEnd.x - posStart.x;
+		distanceY.value = posEnd.y - posStart.y;
+	}
+
+	function onUp( stopMoving )
+	{
+		isSwiping.value = false;
+		timeEnd.value = performance.now();
+
+		stopMoving();
+	}
 
 	return {
 		isSwiping,
