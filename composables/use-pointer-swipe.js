@@ -1,4 +1,4 @@
-import { ref, reactive, computed, onMounted, onUnmounted } from "vue";
+import { ref, watch, reactive, computed, onMounted, onUnmounted } from "vue";
 import { useEventListener } from ".";
 
 /**
@@ -61,29 +61,32 @@ export default function usePointerSwipe( maybeRefEl, { threshold = 50, disableTe
 		return abs( distance / timePassed.value );
 	});
 
-	useEventListener( maybeRefEl, "pointerdown", e =>
+	watch( maybeRefEl, () =>
 	{
-		isSwiping.value = true;
-		posStart.x = e.clientX;
-		posStart.y = e.clientY;
-		timeStart.value = performance.now();
-
-		const stopListeningMove = useEventListener( maybeRefEl, "pointermove", e =>
+		useEventListener( maybeRefEl, "pointerdown", e =>
 		{
-			posEnd.x = e.clientX;
-			posEnd.y = e.clientY;
-			distanceX.value = posEnd.x - posStart.x;
-			distanceY.value = posEnd.y - posStart.y;
+			isSwiping.value = true;
+			posStart.x = e.clientX;
+			posStart.y = e.clientY;
+			timeStart.value = performance.now();
+	
+			const stopListeningMove = useEventListener( maybeRefEl, "pointermove", e =>
+			{
+				posEnd.x = e.clientX;
+				posEnd.y = e.clientY;
+				distanceX.value = posEnd.x - posStart.x;
+				distanceY.value = posEnd.y - posStart.y;
+			});
+	
+			useEventListener( maybeRefEl, "pointerup", () =>
+			{
+				isSwiping.value = false;
+				timeEnd.value = performance.now();
+	
+				stopListeningMove();
+			},{ once: true });
 		});
-
-		useEventListener( maybeRefEl, "pointerup", () =>
-		{
-			isSwiping.value = false;
-			timeEnd.value = performance.now();
-
-			stopListeningMove();
-		},{ once: true });
-	});
+	}, { immediate: true });
 
 	onMounted(() =>
 	{
