@@ -1,4 +1,4 @@
-import { isRef, unref, onMounted, onUnmounted, getCurrentInstance } from "vue";
+import { unref, onMounted, onUnmounted, getCurrentInstance } from "vue";
 
 /**
  * A composition function that adds a DOM event listener to the given target with the
@@ -14,9 +14,9 @@ import { isRef, unref, onMounted, onUnmounted, getCurrentInstance } from "vue";
  * @param {EventListenerOptions} [options] - The options object to pass to addEventListener.
  * @returns {function} - A function that can be called to remove the event listener.
  */
-export default function useEventListener( maybeRefTarget, eventName, callBack, options )
+export default function useEventListener( maybeRefTarget, eventName, callBack, options = {})
 {
-	if( getCurrentInstance() && isRef( maybeRefTarget ))
+	if( getCurrentInstance() && ! options.persistent )
 	{
 		onMounted( listen );
 		onUnmounted( stop );
@@ -59,4 +59,5 @@ export default function useEventListener( maybeRefTarget, eventName, callBack, o
  * @property {boolean} [capture=false] true for capturing, false for bubbling
  * @property {boolean} [once=false] true for run the event once or false for keep it persistent
  * @property {boolean} [passive=false] true for passive, false for not passive
+ * @property {boolean} [persistent=false] true for persistent, false for not persistent
  */
