@@ -2,6 +2,23 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.0.10](https://github.com/ismailceylan/mark-3/compare/v0.0.9...v0.0.10) (2025-09-19)
+
+
+### Features
+
+* **composables:** add new use-timeout composable ([e55c99b](https://github.com/ismailceylan/mark-3/commit/e55c99becb211c006b853682d699b6df543c3bf0))
+* **composables:** add persistent option for the use-event-listener composable ([3361183](https://github.com/ismailceylan/mark-3/commit/3361183e77ac2a3842834efabfe2ea057d890ddf))
+* **composables:** add persistent option for the use-media-query composable ([1cbff8f](https://github.com/ismailceylan/mark-3/commit/1cbff8f6d92fe9a08a73840789261552eecfdd03))
+* **helpers:** add new date/seconds-remaining helper ([0404d06](https://github.com/ismailceylan/mark-3/commit/0404d066f8240152a3a4aa25ee49129549636983))
+
+
+### Bug Fixes
+
+* **composables:** reattach the events when ref-type elements are reassigned ([dde2c85](https://github.com/ismailceylan/mark-3/commit/dde2c85039b69bb6ca75f88334c9d5d81664c08f))
+* **helpers:** correct from-timestamp filename without affecting exports ([15273cb](https://github.com/ismailceylan/mark-3/commit/15273cb7ade8be17a5dda74d8402dbd1f1371b5c))
+* **helpers:** correct is-on-same-day filename without affecting exports ([015b92a](https://github.com/ismailceylan/mark-3/commit/015b92ada54f67fb7d529b92c084f0e82d744f0a))
+
 ### [0.0.9](https://github.com/ismailceylan/mark-3/compare/v0.0.8...v0.0.9) (2025-08-30)
 
 
