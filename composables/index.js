@@ -9,4 +9,4 @@ export { default as useResizeObserver } from "./use-resize-observer.js";
 export { default as useScrollPosition } from "./use-scroll-position.js";
 export { default as useSwipeableDrawer } from "./use-swipeable-drawer.ts";
 export { default as useIntersectionObserver } from "./use-intersection-observer.js";
-export { default as useTimeout } from "./use-timeout.ts";
+export { default as useStorage } from "./use-storage.ts";
