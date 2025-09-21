@@ -251,7 +251,19 @@ watch( container, () =>
 
 if( props.dontWatchResizing === false )
 {
-	useEventListener( window, "resize", debounce( resetHeights, 100 ), { passive: true });
+	let latestWidth = 0;
+	const debouncedResetHeights = debounce( resetHeights, 500 );
+
+	useEventListener( window, "resize", () =>
+	{
+		const newWidth = window.innerWidth;
+		
+		if( newWidth !== latestWidth )
+		{
+			latestWidth = newWidth;
+			debouncedResetHeights();
+		}
+	}, { passive: true });
 }
 
 function resetHeights()
