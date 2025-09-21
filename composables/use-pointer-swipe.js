@@ -102,7 +102,8 @@ export default function usePointerSwipe( maybeRefEl, { threshold = 50, disableTe
 		const stopMoving = useEventListener(
 			maybeRefEl,
 			"pointermove",
-			onMove
+			onMove,
+			{ passive: true, capture: false }
 		);
 
 		useEventListener(
