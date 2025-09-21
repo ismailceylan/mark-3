@@ -194,8 +194,7 @@ watch( scrollTop, async () =>
 	{
 		window.scrollTo( 0, scrollTop.value );
 	}
-}, { immediate: true });
-
+}, { immediate: true, once: true });
 
 watch( endIndex, () =>
 {
