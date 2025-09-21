@@ -8,6 +8,7 @@
 				:item
 				:index
 				:observe
+				:has-scrollbar
 				:style="{ position: 'absolute', transform: 'translateY(' + offsets[ index ] + 'px)' }"
 			/>
 		</div>
@@ -60,6 +61,7 @@ const { max, floor } = Math;
 const heights = ref<number[]>([]);
 const identifiedItems = reactive<{ item: any, index: number }[]>([]);
 const container = ref<HTMLDivElement>( null );
+const hasScrollbar = ref( false );
 const metrics = useCssMetrics( props.itemGapClasses, [ "gap" ] as const, { throttle: 100 });
 const isHeightsDirty = ref( false );
 const dirtyItems = {}
@@ -239,6 +241,13 @@ watch( isHeightsDirty, () =>
 	});
 
 	isHeightsDirty.value = false;
+});
+
+watch( container, () =>
+{
+	setTimeout(() =>
+		hasScrollbar.value = container.value.scrollHeight > container.value.clientHeight
+	);
 });
 
 if( props.dontWatchResizing === false )
