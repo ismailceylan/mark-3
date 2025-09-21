@@ -1,4 +1,5 @@
-export { default as useMediaQuery } from "./use-media-query.js";
+export { default as useTimeout } from "./use-timeout.ts";
+export { default as useMediaQuery } from "./use-media-query.ts";
 export { default as useCssMetrics } from "./use-css-metrics.ts";
 export { default as useScrollEvent } from "./use-scroll-event.js";
 export { default as usePointerSwipe } from "./use-pointer-swipe.js";

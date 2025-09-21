@@ -47,9 +47,11 @@ export default function useResponsiveness( rules = {})
 
 	for( const name in rules )
 	{
-		useMediaQuery( rules[ name ], isActive =>
-			breakpoints[ camelToDash( name )] = isActive
-		);
+		useMediaQuery( rules[ name ],
+		{
+			onChange: isActive =>
+				breakpoints[ camelToDash( name )] = isActive
+		});
 	}
 
 	if( keys.length === 1 )
