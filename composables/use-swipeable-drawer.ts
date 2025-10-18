@@ -1,4 +1,4 @@
-import { ref, watch, type Ref } from "vue";
+import { ref, watch, computed, type Ref } from "vue";
 import { usePointerSwipe } from ".";
 
 export interface SwipeableDrawerReturnValue
@@ -7,6 +7,7 @@ export interface SwipeableDrawerReturnValue
 	swipeTriggerEl: Ref<HTMLElement | null>
 	isSwiping: Ref<boolean>
 	swipeDistance: Ref<number>
+	swipePercent: Ref<number>
 	isDrawerOpen: Ref<boolean>
 	openDrawer: () => void
 	closeDrawer: () => void
@@ -49,7 +50,9 @@ export default function useSwipeableDrawer(
 
 	const axialDistance = { horizontal: distanceX, vertical: distanceY }[ axis ];
 
- 	watch(axialDistance, () =>
+	const swipePercent = computed(() => swipeDistance.value / drawerSize );
+
+ 	watch( axialDistance, () =>
 	{
 		// opening movement
 		if( direction.value === openFrom )
@@ -129,6 +132,7 @@ export default function useSwipeableDrawer(
 		swipeTriggerEl,
 		isSwiping,
 		swipeDistance,
+		swipePercent,
 		isDrawerOpen,
 		openDrawer: open,
 		closeDrawer: close,
