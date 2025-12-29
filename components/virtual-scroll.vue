@@ -252,7 +252,7 @@ watch( isHeightsDirty, () =>
 
 watch( container, () =>
 {
-	setTimeout(() =>
+	nextTick(() =>
 		hasScrollbar.value = container.value.scrollHeight > container.value.clientHeight
 	);
 });
