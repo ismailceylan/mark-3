@@ -236,13 +236,15 @@ watch( isHeightsDirty, () =>
 	visibleItems.value.forEach(({ index }) =>
 	{
 		const itemEl = getItemAsElement( index );
-		
-		if( itemEl === null )
-		{
-			return dirtyItems[ index ] = true;
-		}
 
-		heights.value[ index ] = itemEl.getBoundingClientRect().height + metrics.value.gap;
+		// the item is in the viewport area
+		if( itemEl )
+		{
+			heights.value[ index ] = getItemHeight( itemEl );
+		}
+		
+		// mark item as dirty, so it will be re-measured as soon as it becomes visible
+		dirtyItems[ index ] = true;
 	});
 
 	isHeightsDirty.value = false;
@@ -281,6 +283,11 @@ function resetHeights()
 function getItemAsElement( index: number )
 {
 	return container.value.querySelector( "[data-index='" + index + "']" );
+}
+
+function getItemHeight( el: Element )
+{
+	return el.getBoundingClientRect().height + metrics.value.gap;
 }
 
 
