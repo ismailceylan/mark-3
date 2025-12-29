@@ -73,7 +73,7 @@ export default function useResizeObserver( callback, { throttle = 0 } = {})
  */
 /**
  * @callback ObserveMethod
- * @param {EventTarget} el - The element to observe
+ * @param {HTMLElement} el - The element to observe
  * @returns {void}
  */
 /**
