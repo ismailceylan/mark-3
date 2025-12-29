@@ -258,6 +258,7 @@ watch( container, () =>
 	);
 });
 
+// if watching window resizing is enabled
 if( props.dontWatchResizing === false )
 {
 	let latestWidth = 0;
