@@ -112,6 +112,13 @@ export default function usePointerSwipe( maybeRefEl, { threshold = 50, disableTe
 			() => onUp( stopMoving ),
 			{ once: true }
 		);
+
+		useEventListener(
+			maybeRefEl,
+			"pointerleave",
+			() => onUp( stopMoving ),
+			{ once: true }
+		);
 	}
 
 	function onStart( e )
