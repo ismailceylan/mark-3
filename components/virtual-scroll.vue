@@ -198,6 +198,12 @@ watch( scrollTop, async () =>
 
 watch( endIndex, () =>
 {
+	// prevent automatically triggering the threshold-reached event because there are not too many items
+	if( scrollTop.value === 0 )
+	{
+		return;
+	}
+
 	if(( identifiedItems.length - 1 ) - endIndex.value <= props.threshold )
 	{
 		emit( "threshold-reached" );
