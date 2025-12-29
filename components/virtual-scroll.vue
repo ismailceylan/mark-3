@@ -8,6 +8,7 @@
 				:item
 				:index
 				:observe
+				:re-measure="reMeasure.bind( null, index )"
 				:has-scrollbar
 				:style="{ position: 'absolute', transform: 'translateY(' + offsets[ index ] + 'px)' }"
 			/>
@@ -290,5 +291,10 @@ function getItemHeight( el: Element )
 	return el.getBoundingClientRect().height + metrics.value.gap;
 }
 
+function reMeasure( index: number )
+{
+	dirtyItems[ index ] = true;
+	isHeightsDirty.value = true;
+}
 
 </script>
