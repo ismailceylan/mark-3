@@ -235,7 +235,7 @@ watch( isHeightsDirty, () =>
 
 	visibleItems.value.forEach(({ index }) =>
 	{
-		const itemEl = container.value.querySelector( "[data-index='" + index + "']" );
+		const itemEl = getItemAsElement( index );
 		
 		if( itemEl === null )
 		{
@@ -277,5 +277,11 @@ function resetHeights()
 	heights.value = identifiedItems.map(() => props.minHeight );
 	isHeightsDirty.value = true;
 }
+
+function getItemAsElement( index: number )
+{
+	return container.value.querySelector( "[data-index='" + index + "']" );
+}
+
 
 </script>
