@@ -1,4 +1,5 @@
 export { default as useTimeout } from "./use-timeout.ts";
+export { default as useCountdown } from "./use-countdown.ts";
 export { default as useMediaQuery } from "./use-media-query.ts";
 export { default as useCssMetrics } from "./use-css-metrics.ts";
 export { default as useScrollEvent } from "./use-scroll-event.js";
