@@ -61,4 +61,9 @@ describe( "fromTimestamp", () =>
 	{
 		expect( fromTimestamp( Infinity )).toBe( undefined );
 	});
+
+	it( "should return default for null", () =>
+	{
+		expect( fromTimestamp( null, "fallback" )).toBe( "fallback" );
+	});
 });

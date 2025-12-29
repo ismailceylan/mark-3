@@ -17,7 +17,7 @@ export default function fromTimestamp( timestamp, defaultValue )
 		? Number( timestamp )
 		: timestamp;
 
-	if( Number.isNaN( ts ))
+	if( Number.isNaN( ts ) || ts === null )
 	{
 		return defaultValue;
 	}
