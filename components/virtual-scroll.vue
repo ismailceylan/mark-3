@@ -261,7 +261,7 @@ watch( container, () =>
 // if watching window resizing is enabled
 if( props.dontWatchResizing === false )
 {
-	let latestWidth = 0;
+	let latestWidth = window.innerWidth;
 	const debouncedResetHeights = debounce( resetHeights, 500 );
 
 	useEventListener( window, "resize", () =>
