@@ -1,4 +1,5 @@
 export { default as UnderConstruction } from "./under-construction.vue";
+export { default as EmptyDocument } from "./empty-document.vue";
 export { default as OfflineShore } from "./offline-shore.vue";
 export { default as PublishPost } from "./publish-post.vue";
 export { default as Error404 } from "./error-404.vue";
