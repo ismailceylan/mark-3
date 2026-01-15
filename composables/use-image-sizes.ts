@@ -1,0 +1,24 @@
+import { ref } from "vue";
+
+/**
+ * Returns the natural width and height of an image, along with a
+ * onLoad function that can be used to load the image.
+ * 
+ * @param url - The URL of the image
+ * @returns width, height and onLoad function
+ */
+export default function useImageSizes( url: string )
+{
+	const width = ref( 0 );
+	const height = ref( 0 );
+
+	function onLoad( event: Event )
+	{
+		const img = event.target as HTMLImageElement;
+
+		width.value = img.naturalWidth;
+		height.value = img.naturalHeight;
+	}
+
+	return { width, height, onLoad }
+}
