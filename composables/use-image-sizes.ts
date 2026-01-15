@@ -8,8 +8,8 @@ import { ref } from "vue";
  */
 export default function useImageSizes()
 {
-	const width = ref( 0 );
-	const height = ref( 0 );
+	const width = ref( 16 );
+	const height = ref( 9 );
 
 	function onLoad( event: Event )
 	{
