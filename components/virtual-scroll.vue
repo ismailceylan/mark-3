@@ -1,7 +1,10 @@
 <template>
 	<!-- Mark-3/VirtualScroll -->
 	<div ref="container">
-		<div :style="{ transform: 'translateZ(0)', position: 'relative', minHeight: totalHeight + 'px' }">
+		<component
+			:is="tag"
+			:style="{ transform: 'translateZ(0)', position: 'relative', minHeight: totalHeight + 'px' }"
+		>
 			<slot
 				v-for="{ item, index } of visibleItems"
 				:key="index"
@@ -12,7 +15,7 @@
 				:has-scrollbar
 				:style="{ position: 'absolute', transform: 'translateY(' + offsets[ index ] + 'px)' }"
 			/>
-		</div>
+		</component>
 
 		<slot name="bottom" />
 	</div>
@@ -32,6 +35,12 @@ const props = defineProps(
 {
 	pageMode: Boolean,
 	dontWatchResizing: Boolean,
+	
+	tag:
+	{
+		type: String,
+		default: "div"
+	},
 
 	items: {
 		type: Array,
