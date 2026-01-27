@@ -2,6 +2,48 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.0.11](https://github.com/ismailceylan/mark-3/compare/v0.0.10...v0.0.11) (2026-01-27)
+
+
+### Features
+
+* **cliparts:** add exports for various clipart components ([b1535a1](https://github.com/ismailceylan/mark-3/commit/b1535a1033ad80321cccd962bc3ee6b2a0af2ac8))
+* **components:** add has-scrollbar ref to virtual-scroll component ([5d9ecb4](https://github.com/ismailceylan/mark-3/commit/5d9ecb4086e43ade7b4afd43e36fd995fdb9c2c9))
+* **components:** add new heat meter component ([3d75c56](https://github.com/ismailceylan/mark-3/commit/3d75c56194f6c2619c16d7791b9f7e612caecf0d))
+* **composables:** add new use-storage composable ([83d40e1](https://github.com/ismailceylan/mark-3/commit/83d40e1dfb6fe32b02ed7e47c79333bab1adc15f))
+* **composables:** use-swipeable-drawer exports swipePercent computed ([9066322](https://github.com/ismailceylan/mark-3/commit/90663226f6cffcc6e6331e126e56f56525812301))
+* **countdown:** add useCountdown composable for countdown functionality ([4e7d617](https://github.com/ismailceylan/mark-3/commit/4e7d61753148afbc958fc60bc90b5841e21aa958))
+* **empty-document:** add new EmptyDocument clipart component ([a67797d](https://github.com/ismailceylan/mark-3/commit/a67797dde63d22c43fb681e894a2592fce47e2ab))
+* **error-404:** add Error404 clipart component with SVG paths and props ([70a3306](https://github.com/ismailceylan/mark-3/commit/70a3306f5002b4e1ac51e161e43d5eb73396d5c6))
+* **helpers:** add new concurrency/leadership method ([b844c99](https://github.com/ismailceylan/mark-3/commit/b844c998ec30f7d85731ffe927b391ba53dd3f31))
+* **helpers:** add new trimCustom method ([0f6a7de](https://github.com/ismailceylan/mark-3/commit/0f6a7dee70fd6b4adf544e66b8f24195aad61467))
+* **image-sizes:** add useImageSizes composable for image dimensions ([98231f5](https://github.com/ismailceylan/mark-3/commit/98231f519cd759609330b89c6d8bcb684b3d8768))
+* **my-answer:** add new SVG clipart component with customizable props ([b616c9b](https://github.com/ismailceylan/mark-3/commit/b616c9b40ff1a93169c67d55bf34db6828e7e6a9))
+* **offline-shore:** add OfflineShore SVG clipart component with customizable props ([d55cc14](https://github.com/ismailceylan/mark-3/commit/d55cc14ad33ebeb3a1e0e41fdec3fca8edf32787))
+* **publish-post:** add PublishPost SVG clipart component with customizable props ([64843be](https://github.com/ismailceylan/mark-3/commit/64843be38a3fe64cc87d17d867f945b82fac7a72))
+* **seconds-to-timestamp:** add helper function to convert seconds to human-readable timestamp ([773e326](https://github.com/ismailceylan/mark-3/commit/773e3262ced83ff647e9cf88c4b895b6bb689ad6))
+* **separated-otp-inputs:** add useSeparatedOTPInputs composable for managing separated OTP inputs ([2d46a16](https://github.com/ismailceylan/mark-3/commit/2d46a1600c2508d01e7ec1b256ceaf98b0371b8a))
+* **server-clipart:** add Server SVG clipart component with customizable props ([2a7ecf6](https://github.com/ismailceylan/mark-3/commit/2a7ecf6f42ee5faa49a06376a247d872c158ff46))
+* **split:** implement split function for text preview and remaining content ([7963440](https://github.com/ismailceylan/mark-3/commit/79634407dcabd5026c9578ed6244803d822ce806))
+* **types:** reintroduce type-checking helpers for array, map, set, and string ([5a78956](https://github.com/ismailceylan/mark-3/commit/5a78956971cead010e25c2d7d4dcaaa3f0ffa562))
+* **under-construction:** add UnderConstruction SVG clipart component with customizable props ([576d55e](https://github.com/ismailceylan/mark-3/commit/576d55eb8d2baed9a403ed11e5ccc2e9431e1148))
+* **use-image-sizes:** include isLoaded state in return values ([17965d3](https://github.com/ismailceylan/mark-3/commit/17965d320fe1bbc8c4cdddbbd3bdf40ca4d5301b))
+* **use-pointer-swipe:** add pointerleave event listener to handle swipe end ([97bad0c](https://github.com/ismailceylan/mark-3/commit/97bad0c1bb4ed99255b91b632e7b96a89fdb806d))
+* **virtual-scroll:** add re-measure functionality for item heights ([41526b9](https://github.com/ismailceylan/mark-3/commit/41526b9949d21f0ac95e0fb81ac300b747a129a5))
+* **virtual-scroll:** allow customizable tag for container element ([a3ac253](https://github.com/ismailceylan/mark-3/commit/a3ac253464caed184bd04b363e7cdf30bc26ceba))
+
+
+### Bug Fixes
+
+* **components:** only listen to actual screen width changes in virtual-scroll ([a260f1f](https://github.com/ismailceylan/mark-3/commit/a260f1fdf47f936e5368cce2021e090a0eb35f6c))
+* **components:** prevent threshold-reached event from triggering with insufficient items ([ea618a6](https://github.com/ismailceylan/mark-3/commit/ea618a6d74b36c83e56feba821e164b15c30e96b))
+* **from-timestamp:** handle null input and return default value ([556684c](https://github.com/ismailceylan/mark-3/commit/556684c49fb71844b75e178cffc7aa5bfed3a6f0))
+* **use-image-sizes:** initialize width and height to default values ([8a24039](https://github.com/ismailceylan/mark-3/commit/8a2403976b154e204979057cd21b5d0593e3d722))
+* **use-resize-observer:** update parameter type in ObserveMethod callback documentation ([24db5ec](https://github.com/ismailceylan/mark-3/commit/24db5ec61ec7f9e31c24dd8cea277f2cce2586b7))
+* **virtual-scroll:** improve item height measurement logic in visibleItems watcher ([415eded](https://github.com/ismailceylan/mark-3/commit/415eded77c7fa041d8ecb13a9a2114cf358d4d4d))
+* **virtual-scroll:** initialize latestWidth with window.innerWidth for accurate resizing ([7c8e5c1](https://github.com/ismailceylan/mark-3/commit/7c8e5c132f07ad4d085b3efe6fd6d409929424be))
+* **virtual-scroll:** use nextTick for scrollbar height check after container updates ([292ecfc](https://github.com/ismailceylan/mark-3/commit/292ecfcfb67a73725365c0d565cf805359ce6635))
+
 ### [0.0.10](https://github.com/ismailceylan/mark-3/compare/v0.0.9...v0.0.10) (2025-09-19)
 
 
